@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
         <title>
            Wikipedia API 
         </title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-        
-    <style>
+    
+        <style>
     
         body {
             background-image: url("https://vignette.wikia.nocookie.net/steven-universe/images/f/fd/Pushed_A_Boulder_Through_Background.jpg/revision/latest?cb=20141010143501");
-            
+          
         }
         .wiki-search {
             text-align: center;
@@ -20,7 +21,7 @@
             font-weight: bold;
             font-size: 24;
             font-family: cursive;
-            margin-top: 155px;
+            margin-top: 145px;
            
         }
         img {
@@ -29,7 +30,10 @@
             height: auto;
            
         }
-       
+        @media (min-width: 320px) and (max-width: 480px) {
+            
+        }
+        
     </style></head>
     
     <body>
@@ -38,22 +42,33 @@
         
         <h1 class="title">Search Wikipedia</h1>
         
-        <div id="search" class="search-container">
-            <form action="/action_page.php">
-                <input type="text" placeholder="Search..." name="search">
-                <button type="submit" id="searchBut"><i class="fa fa-search"></i></button>
+        <div class="search-panel">
+            <form class="searchForm">
+                
+                <!--Search Bar-->
+                <input type="text" id="searchTerm" placeholder="Search..." name="search">
+                
+                <!--Search Button for Search Bar-->
+                <button id="searchButton"><i class="fa fa-search"></i></button>
             </form>
             <br>
+            
+            <!--Random Search Button-->
             <div="randomSearch">
-                <button type="submit" class="btn btn success"><a href = "https://en.wikipedia.org/wiki/Special:Random">Random Search</a></button>
+                <a href = "https://en.wikipedia.org/wiki/Special:Random" class="btn btn-primary" style="text-decoration: none;" target="_blank" rel="noopener">Random Search</a></button>
                 </div>
-           
             <img src="https://vignette.wikia.nocookie.net/gtawiki/images/7/7f/Wikipedia-logo-en.png/revision/latest?cb=20100321225311"></img>
+            </div>
+            
+            <!--Output Section-->
+            <div id="display">
+                <ul>
+                    
+                </ul>
             </div>
         </div>
         </div>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="wikiapi.js"></script>
+        
+          <script src="wikiapi.js"></script>
     </body>
 </html>
